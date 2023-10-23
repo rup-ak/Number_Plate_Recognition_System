@@ -9,13 +9,18 @@ then you can easily run the program
 (The image needs to be an image exact from the font like this ![image](https://user-images.githubusercontent.com/93119678/225416787-d4ba1318-dfcc-42db-8a1b-d7c2caa04d2b.png)
 
 
- ## 1. Train the dataset to the model
- ## 2.	Building the System
- ## 3. Predict the detection of the image edge.
- ## 4. Recognize the number plate.
- ## 5. Show the output image.
+  1. Train the dataset to the model
+  2.	Building the System
+  3. Predict the detection of the image edge.
+  4. Recognize the number plate.
+  5. Show the output image.
 
-Here for the dependency, I used Os, cv2, matplotlib.pyplot, easyocr, imutils, numpy, tensorflow.
+### Here for the dependency, I used Os, cv2, matplotlib.pyplot, easyocr, imutils, numpy, tensorflow.
+
+![image](https://github.com/rup-ak/Number_Plate_Recognition_System/assets/93119678/1500cee3-b11a-4d67-8c63-b81cae57b449)
+
+#### This is the Flow-Chart of Our System
+
 
  ### 1.  Train the dataset to the model
 
@@ -31,7 +36,8 @@ Then I used Keras API of TensorFlow. It is then used to define the architecture 
 4.	2 * Dense layer
 
    ![image](https://github.com/rup-ak/Number_Plate_Recognition_System/assets/93119678/c5ecad7f-28fa-40da-bddd-d2ddeb92ed6e)
-   Visualize Model Architecture
+   
+   #### Visualize Model Architecture
 
 In the conv2D layer, I used 32 filter whose shape is 3*3 and I used relu activation which indicate is the function is active or fires whenever the input is positive or zero but will not activate when the input is negative. Then I use MaxPooling2D which is a 2*2 shape and then The Flatten layer then I use the 1st Dense layer where I use 64 neurons and, in the 2nd, Dense layer, I use the neuron how many I have image class, and I used softmax activation. Then I compile the model and train the model with 20 epochs. 
 Then I check the validation of the dataset with the same architecture of the model and then I test the dataset with totally different data I get 100% training accuracy and 93% testing accuracy and then I save the model for use later. 
@@ -44,17 +50,24 @@ Here my training accuracy is 100% and the training time is 322.95 seconds, and t
 ### 3. Predict and recognize the class of an Image.
 Then I read an image, resize it to 64*64, and convert it to grayscale to predict the class. After the prediction. 
 
+
 ### 4. Recognize the number plate.
 I need to recognize the number from the number plate. For that, I use bilateralFilter to reduce noise and use Canny for edge detection. Then I find the contours with the findContours function and draw the contours in a bounding box. 
 
 ![image](https://github.com/rup-ak/Number_Plate_Recognition_System/assets/93119678/22446427-cd93-42d9-8b2e-1ad21e694a57)
-Preprocess for recognized image
+
+#### Preprocess for recognized image
+
 
 ### 5. Show the output image.
  Then I used easyOCR to read a text and render results which is a Python package for performing Optical Character Recognition on the cropped number plate image. This OCR step recognizes any additional text that may be present in the number plate image and returns the recognized text as a list of tuples. The recognized text is stored in the result variable.
 
  ![image](https://github.com/rup-ak/Number_Plate_Recognition_System/assets/93119678/a5ce2294-9fff-42d3-870b-c47d88a9dc08) 
-Annotate the Number Plate
+
+#### Annotate the Number Plate
+
+
  ![image](https://github.com/rup-ak/Number_Plate_Recognition_System/assets/93119678/c96c9215-29db-4ee2-8839-a49af4095b61)
-And this is the final result
+
+#### And this is the final result
 
