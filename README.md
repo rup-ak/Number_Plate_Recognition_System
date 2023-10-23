@@ -11,3 +11,9 @@ then you can easily run the program
 
 
  ### 1.	Building the System
+ ### 2. Predict the Detect the image edge.
+## 3. Crop the number plate from the image.
+Step –4: Recognize the number plate.
+Step –5: Show the output image.
+
+ ## 
