@@ -17,6 +17,9 @@ then you can easily run the program
 
 ### Here for the dependency, I used Os, cv2, matplotlib.pyplot, easyocr, imutils, numpy, tensorflow.
 
+
+
+
 ![image](https://github.com/rup-ak/Number_Plate_Recognition_System/assets/93119678/1500cee3-b11a-4d67-8c63-b81cae57b449)
 
 #### This is the Flow-Chart of Our System
@@ -36,8 +39,7 @@ Then I used Keras API of TensorFlow. It is then used to define the architecture 
 4.	2 * Dense layer
 
    ![image](https://github.com/rup-ak/Number_Plate_Recognition_System/assets/93119678/c5ecad7f-28fa-40da-bddd-d2ddeb92ed6e)
-   
-   #### Visualize Model Architecture
+  ####  This is the Visualize Model Architecture
 
 In the conv2D layer, I used 32 filter whose shape is 3*3 and I used relu activation which indicate is the function is active or fires whenever the input is positive or zero but will not activate when the input is negative. Then I use MaxPooling2D which is a 2*2 shape and then The Flatten layer then I use the 1st Dense layer where I use 64 neurons and, in the 2nd, Dense layer, I use the neuron how many I have image class, and I used softmax activation. Then I compile the model and train the model with 20 epochs. 
 Then I check the validation of the dataset with the same architecture of the model and then I test the dataset with totally different data I get 100% training accuracy and 93% testing accuracy and then I save the model for use later. 
